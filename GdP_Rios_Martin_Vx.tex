@@ -20,7 +20,7 @@
 \autor{Ing. Martín Julián Ríos} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{A definir}
+\director{Esp. Ing. Mauro Oscar Moreyra}
 \pertenenciaDirector{A definir} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 %\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo e implementación de un sistema de control y localización de un precinto electrónico para monitoreo de cargas y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y u\$d 5200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo e implementación de un sistema de control y localización de un precinto electrónico para monitoreo de cargas y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y U\$D 5200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -102,7 +102,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
@@ -130,7 +130,7 @@ Para alcanzar el objetivo mencionado, se propone un sistema como el que se muest
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=1\textwidth]{./Figuras/diagrama_proyecto.pdf}
-\caption{Diagrama en bloques del sistema}
+\caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure} 
 
@@ -288,28 +288,28 @@ Para el desarrollo del presente proyecto se supone que se cuenta con:
 \label{sec:requerimientos}
 
 \begin{enumerate}
+	\item Requerimientos de documentación
+		\begin{enumerate}
+			\item Se debe generar un Memoria Técnica con la documentación de ingeniería detallada.
+			\item Todo el código desarrollado deberá respetar las plantillas y los estándares de
+de la empresa \empclientename
+			\item Se debe generar un documento de casos de prueba.
+		\end{enumerate}
+
 	\item Requerimientos de hardware
 		\begin{enumerate}
 			\item El equipo debe contar con un módulo celular con capacidad para conectarse a la red LTE Cat-M y 2G.
 			\item El equipo debe poseer un módulo GNSS.
 			\item El equipo debe contar con un módulo Wi-Fi.
-			\item El equipo debe ser alimentado con una batería de Li-Ion de 7,4 V 6,4 Ah.		
+			\item El equipo debe ser alimentado con una batería de Li-Ion de 7,4 V y 6,4 Ah.		
 			\item El equipo debe contar con:
 			\begin{itemize}
-				\item 1 salida digital para destrabar el mecanismo de cierre del precinto 
-				\item 2 salidas digitales para indicadores luminosos
-				\item 1 entrada digital para un pulsador
-				\item 1 entrada digital para detectar la apertura del precinto
+				\item 1 salida digital para destrabar el mecanismo de cierre del precinto. 
+				\item 2 salidas digitales para indicadores luminosos.
+				\item 1 entrada digital para un pulsador.
+				\item 1 entrada digital para detectar la apertura del precinto.
 			\end{itemize}
-			\item El equipo debe contar con una memoria de almacenamiento.
-
-			
-%			\item El equipo debe tener un indicador luminoso para indicar el estado del precinto (Estado abierto $\rightarrow$ indicador encendido; estado cerrado $\rightarrow$ indicador apagado).
-%			\item El equipo debe tener un indicador luminoso para indicar el estado de la red Wi-Fi (Wi-Fi encendido $\rightarrow$ indicador encendido; Wi-Fi apagado $\rightarrow$ indicador apagado).
-%			\item El equipo debe poder apagar y encender la bobina de un electroimán con un consumo de 1 A y una tensión de alimentación de 5 V.
-%			\item El equipo debe tener un pulsador para encender la comunicación Wi-Fi.
-%			\item El equipo 
-			
+			\item El equipo debe contar con una memoria de almacenamiento.			
 		\end{enumerate}
 		
 	\item Requerimientos funcionales
@@ -319,24 +319,36 @@ Para el desarrollo del presente proyecto se supone que se cuenta con:
 			\item El usuario debe poder realizar la apertura del precinto mediante un dispositivo con comunicación Wi-Fi o desde la plataforma Web de monitoreo de la empresa \empclientename
 			\item El equipo debe restringir el acceso a la comunicación Wi-Fi por medio de una clave que pueda ser modificada por el servidor remoto.
 			\item El usuario debe poder encender la red Wi-Fi mediante un pulsador.
-			\item El equipo debe almacenar en una memoria no volátil todos los reportes generados.
+			\item El equipo debe almacenar en memoria no volátil todos los reportes generados.
 			\item La memoria debe tener capacidad para almacenar al menos 10000 reportes. 
 			\item El equipo debe poder medir la tensión de la batería con que se alimenta.
 			\item El equipo debe permitir modificar los siguientes parámetros de operación:
 			\begin{itemize}
-				\item Tiempo de reporte entre 1 y 30 minutos
-				\item IP y puerto del servidor remoto
-				\item Código de identificación del precinto
+				\item Tiempo de reporte entre 1 y 30 minutos.
+				\item IP y puerto del servidor remoto.
+				\item Código de identificación del precinto.
 			\end{itemize}
 			\item El equipo debe indicar con un indicador luminoso el estado del precinto (abierto/cerrado) y con otro, el estado de la red Wi-Fi (encendida/apagada).			
 			\item El usuario debe poder descargar la memoria almacenada.
 		\end{enumerate}
+		
 	\item Requerimientos de interfaz
 		\begin{enumerate}
 			\item El equipo debe poder comunicarse mediante una interfaz serie con el módulo celular por medio de comandos AT.
 			\item El equipo debe tener una interfaz serie disponible para realizar la descarga de memoria y la configuración de los parámetros de operación.
 			\item El equipo debe restringir el acceso a la interfaz serie de descarga de memoria y configuración de parámetros por medio de una clave.
-		\end{enumerate}		
+		\end{enumerate}
+		
+	\item Requerimientos de verificación
+		\begin{enumerate}
+			\item Se debe generar una matriz de trazabilidad entre la Memoria Técnica y los requerimientos.
+			\item Se debe generar una matriz de trazabilidad entre las pruebas de integración y los requerimientos.
+		\end{enumerate}			
+			
+	\item Requerimientos de validación
+		\begin{enumerate}
+			\item Se debe generar una matriz de trazabilidad entre el documento de casos de prueba y los requerimientos.
+		\end{enumerate}			
 \end{enumerate}
 
 %\begin{consigna}{red}
@@ -381,12 +393,12 @@ Para el desarrollo del presente proyecto se supone que se cuenta con:
 Para realizar la evaluación de las Historias de Usuario se tomaron en cuenta los siguientes tres parámetros: 
 
 \begin{itemize}
-	\item \textbf{Dificultad:} La cantidad de trabajo a realizar
-	\item \textbf{Complejidad:} El nivel de sofisticación del trabajo
-	\item \textbf{Incertidumbre:} El nivel de riesgo que involucra realizar la tarea
+	\item \textbf{Dificultad:} La cantidad de trabajo a realizar.
+	\item \textbf{Complejidad:} El nivel de sofisticación del trabajo.
+	\item \textbf{Incertidumbre:} El nivel de riesgo que involucra realizar la tarea.
 \end{itemize}
 
-Luego, para estimar el tamaño de la historia (\textit{story point}), a cada parámetro se le asignó un peso tomando un valor de la serie de Fibonacci (0, 1, 2, 3, 5, 8, 13, 21, 34...) como se observa en el Cuadro \ref{tab:criterios_evaluacion}. A continuación, se sumó el peso de cada parámetro y al resultado obtenido se lo hizo corresponder con el valor próximo siguiente de la serie de Fibonacci.
+Luego, para estimar el tamaño de la historia (\textit{story points}), a cada parámetro se le asignó un peso tomando un valor de la serie de Fibonacci (0, 1, 2, 3, 5, 8, 13, 21, 34...) como se observa en el Cuadro \ref{tab:criterios_evaluacion}. A continuación, se sumó el peso de cada parámetro y al resultado obtenido se lo hizo corresponder con el valor próximo siguiente de la serie de Fibonacci.
 
 \begin{table}[ht]
 \centering
@@ -397,7 +409,7 @@ Luego, para estimar el tamaño de la historia (\textit{story point}), a cada par
 \textbf{Complejidad}	&	1			&	5			&	13 	\\ \hline
 \textbf{Incertidumbre}	&   2   		&   3     		&  	5	\\ \hline
 \end{tabular}
-\caption{Criterios de evaluación y puntajes}
+\caption{Criterios de evaluación y puntajes.}
 \label{tab:criterios_evaluacion}
 \end{table}
 
@@ -407,54 +419,54 @@ Luego, para estimar el tamaño de la historia (\textit{story point}), a cada par
 \begin{itemize}
 	\item \textbf{Dificultad:} alta (3) $\rightarrow$ involucra varias horas de trabajo.
 	\item \textbf{Complejidad:} media (5) $\rightarrow$ si bien hay que implementar varias funciones y desarrollar una página Web no es una tarea muy compleja.
-	\item \textbf{Incertidumbre:} media (3) $\rightarrow$ Pueden surgir problemas de compatibilidad con algunos dispositivos.
+	\item \textbf{Incertidumbre:} media (3) $\rightarrow$ pueden surgir problemas de compatibilidad con algunos dispositivos.
 \end{itemize}
 
-\textbf{Story Point:} 13 (valor más próximo a 11 en la serie de Fibonacci) 
+\textbf{Story Points:} 13 (valor más próximo a 11 en la serie de Fibonacci) 
 
 \subsection{Historia 2}
 ``Como desarrollador de la plataforma de monitoreo quiero recibir el valor de la tensión de batería para mostrarlo a los usuarios del sistema.''
 
 \begin{itemize}
-	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo
+	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo.
 	\item \textbf{Complejidad:} baja (1) $\rightarrow$ las funciones a implementar son sencillas.
 	\item \textbf{Incertidumbre:} baja (2) $\rightarrow$ es una tarea que ya se ha realizado varias veces.
 \end{itemize}
 
-\textbf{Story Point:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
+\textbf{Story Points:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
 
 \subsection{Historia 3}
 ``Como usuario quiero que se encienda un indicador luminoso para saber que el precinto está destrabado y así retirar el grillete.''
 
 \begin{itemize}
-	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo
+	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo.
 	\item \textbf{Complejidad:} baja (1) $\rightarrow$ las funciones a implementar son sencillas.
 	\item \textbf{Incertidumbre:} baja (2) $\rightarrow$ es una tarea que ya se ha realizado varias veces.
 \end{itemize}
 
-\textbf{Story Point:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
+\textbf{Story Points:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
 
 \subsection{Historia 4}
 ``Como usuario quiero descargar la memoria de almacenamiento para revisar todos los eventos ocurridos durante un traslado.''
 
 \begin{itemize}
-	\item \textbf{Dificultad:} media (1) $\rightarrow$ involucra pocas horas de trabajo
+	\item \textbf{Dificultad:} media (1) $\rightarrow$ involucra pocas horas de trabajo.
 	\item \textbf{Complejidad:} media (5) $\rightarrow$ las funciones a implementar son sencillas pero hay que establecer un protocolo de comunicación con el software de descarga.
 	\item \textbf{Incertidumbre:} baja (2) $\rightarrow$ hay ejemplos de otros desarrollos previos.
 \end{itemize}
 
-\textbf{Story Point:} 8 
+\textbf{Story Points:} 8 
 
 \subsection{Historia 5}
 ``Como usuario quiero recibir una notificación cada vez que se realice una apertura del precinto para evitar retiros no autorizados.''
 
 \begin{itemize}
-	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo
+	\item \textbf{Dificultad:} baja (1) $\rightarrow$ involucra pocas horas de trabajo.
 	\item \textbf{Complejidad:} baja (1) $\rightarrow$ las funciones a implementar son sencillas.
 	\item \textbf{Incertidumbre:} baja (2) $\rightarrow$ es una tarea que ya se ha realizado varias veces.
 \end{itemize}
 
-\textbf{Story Point:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
+\textbf{Story Points:} 5 (el valor siguiente a 4 en la serie de Fibonacci) 
 
 %\begin{consigna}{red}
 %Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
@@ -468,11 +480,11 @@ Luego, para estimar el tamaño de la historia (\textit{story point}), a cada par
 \label{sec:entregables}
 
 \begin{itemize}
-	\item Código fuente del firmware
-	\item Prototipo del equipo funcionando
-	\item Documentación del código fuente
-	\item Manual de uso
-	\item Informe final
+	\item Código fuente del firmware.
+	\item Prototipo del equipo funcionando.
+	\item Documentación del código fuente.
+	\item Manual de uso.
+	\item Informe final.
 \end{itemize}
 
 %\begin{consigna}{red}
@@ -519,7 +531,7 @@ Al comienzo de cada etapa se indica un subtotal en horas de las tareas que la co
 	\begin{enumerate}
 	\item Pruebas unitarias en cada módulo								\hspace*{\fill}30 hs
 	\item Pruebas de integración										\hspace*{\fill}40 hs
-	\item Prueba del sistema completo									\hspace*{\fill}40 hs
+	\item Pruebas del sistema completo									\hspace*{\fill}40 hs
 	\end{enumerate}
 \item Cierre del proyecto												\hspace*{\fill}\textbf{100 hs}
 	\begin{enumerate}
