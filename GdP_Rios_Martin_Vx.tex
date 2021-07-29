@@ -21,7 +21,7 @@
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Esp. Ing. Mauro Oscar Moreyra}
-\pertenenciaDirector{A definir} 
+\pertenenciaDirector{MPF CABA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 %\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
@@ -40,7 +40,7 @@
  
 \fechaINICIO{24 de junio de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{19 de agosto de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{21 de junio de 2022}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{13 de julio de 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -93,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo e implementación de un sistema de control y localización de un precinto electrónico para monitoreo de cargas y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y U\$D 5200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo e implementación de un sistema de control y localización de un precinto electrónico para monitoreo de cargas y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y U\$D 7128, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -524,7 +524,7 @@ Al comienzo de cada etapa se indica un subtotal en horas de las tareas que la co
 	\item Desarrollo del módulo de comunicación con el módulo GNSS		\hspace*{\fill}30 hs
 	\item Desarrollo del módulo para la comunicación Wi-Fi				\hspace*{\fill}40 hs
 	\item Desarrollo de la página Web para interactuar con el usuario	\hspace*{\fill}30 hs
-	\item Desarrollo del módulo de almacenamiento en memoria			\hspace*{\fill}30 hs
+	\item Desarrollo del módulo para el manejo de la memoria			\hspace*{\fill}30 hs
 	\item Desarrollo del módulo de configuración y debug				\hspace*{\fill}30 hs
 	\item Integración de los diferentes módulos							\hspace*{\fill}40 hs	
 	\end{enumerate}
@@ -579,6 +579,46 @@ Cantidad total de horas: 												\hspace*{\fill}\textbf{600 hs}
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
+A partir del WBS definido en la sección \ref{sec:wbs} se realiza el diagrama Activity On Node de la Figura \ref{fig:aon} donde los tiempos se expresan en horas. Los caminos críticos se marcan sobre el diagrama con las flechas de mayor grosor y tienen una duración de 350 horas.
+
+En el Cuadro \ref{tab:aonColors} se indica la correspondencia de cada color utilizado para realizar el diagrama AON.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1.1\textwidth]{./Figuras/aon_critico.pdf}
+\caption{Diagrama de Activity On Node.}
+\label{fig:aon}
+\end{figure} 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|}
+\hline
+\rowcolor[HTML]{FBFB7B}
+Documentación y análisis preliminar		\\ \hline
+\rowcolor[HTML]{A9D3FA}
+Diseño e implementación del firmware	\\ \hline
+\rowcolor[HTML]{90EE90}
+Verificación y validación				\\ \hline
+\rowcolor[HTML]{FEABAB}
+Cierre del proyecto						\\ \hline
+\end{tabular}
+\caption{Colores utilizados para realizar el diagrama AON.}
+\label{tab:aonColors}
+\end{table}
+
+%\begin{table}[ht]
+%\label{tab:registro}
+%\centering
+%\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
+%\hline
+%\rowcolor[HTML]{C0C0C0} 
+%Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{FBFB7B}Detalles de los cambios realizados} & Fecha      \\ \hline
+%0      & Creación del documento                                 & 24/06/2021 \\ \hline
+%\end{tabularx}
+%\end{table}
+
+
 %\begin{consigna}{red}
 %Armar el AoN a partir del WBS definido en la etapa anterior. 
 %
@@ -603,6 +643,24 @@ Cantidad total de horas: 												\hspace*{\fill}\textbf{600 hs}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
+
+Para realizar el diagrama de Gantt se consideró una jornada laboral de 2 horas diarias, tomando todos los días hábiles desde el inicio del proyecto. La duración de las tareas está expresada en días.
+
+En la Figura \ref{fig:listaTareas} se muestra el listado de tareas que luego van a conformar el diagrama de Gantt de la Figura \ref{fig:diagGantt}. Las tareas de duración 0 son los hitos del proyecto.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/lista_tareas.pdf}
+\caption{Listado de tareas. La duración está expresada en días.}
+\label{fig:listaTareas}
+\end{figure} 
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1.5\textwidth, angle=90]{./Figuras/gantt.pdf}
+\caption{Diagrama de Gantt.}
+\label{fig:diagGantt}
+\end{figure} 
 
 %\begin{consigna}{red}
 %
@@ -659,6 +717,85 @@ Cantidad total de horas: 												\hspace*{\fill}\textbf{600 hs}
 %
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
+
+A continuación se presenta el presupuesto detallado del proyecto donde los costos se expresan en dólares estadounidenses.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Descripción & 
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} & 
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} & 
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} 
+  \\ \hline
+\multicolumn{1}{|l|}{Horas de ingeniería} &
+600 &
+8  	&
+4800  
+  \\ \hline
+\multicolumn{1}{|l|}{Placa 5G NB-IoT \& GNSS} &
+ 1 &
+180  &
+180  
+   \\ \hline
+\multicolumn{1}{|l|}{Placa tipo \textit{shield} con Wi-Fi} &
+ 1 &
+36  &
+36
+   \\ \hline
+\multicolumn{1}{|l|}{Solenoide} &
+1   &
+10   &
+10
+   \\ \hline
+\multicolumn{1}{|l|}{Pulsador} &
+1   &
+3   &
+3
+   \\ \hline   
+\multicolumn{1}{|l|}{Leds} &
+2   &
+0,10   &
+0,20
+   \\ \hline  
+\multicolumn{1}{|l|}{Batería Li-Ion} &
+1   &
+30   &
+30
+   \\ \hline    
+\multicolumn{1}{|l|}{Prototipo de gabinete} &
+1   &
+30   &
+30
+   \\ \hline
+\multicolumn{1}{|l|}{Grillete metálico} &
+1   &
+2   &
+2
+   \\ \hline       
+\multicolumn{3}{|r|}{SUBTOTAL} & 
+  \multicolumn{1}{r|}{5091,20} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+  \multicolumn{3}{c|}{\cellcolor[HTML]{C0C0C0}Descripción} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} 
+  \\ \hline
+\multicolumn{3}{|l|}{Costos indirectos estimados como el 40\% de los costos directos} & 2036,48
+   \\ \hline
+\multicolumn{3}{|r|}{SUBTOTAL} & 
+  \multicolumn{1}{r|}{2036,48} 
+  \\ \hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{3}{|r|}{TOTAL} & 7127,68
+   \\ \hline
+\end{tabularx}
+\end{table}
+
 %
 %\begin{consigna}{red}
 %Si el proyecto es complejo entonces separarlo en partes:
